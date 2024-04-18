@@ -34,7 +34,7 @@ export default function ArtsList() {
 
     useEffect(() => {
         axios
-            .get('http://localhost:5000/api/arts')
+            .get('mongodb+srv://group13:group13@cluster0.akw4nmv.mongodb.net/ArtList/api/arts')
             .then((response) => {
                 setArtList(response.data)
                 console.log(setArtList);
@@ -48,7 +48,7 @@ export default function ArtsList() {
         const newBid = {bids:{user: user, bid: bid}}
 
         axios
-        .post('http://localhost:5000/api/art', newBid)
+        .post('mongodb+srv://group13:group13@cluster0.akw4nmv.mongodb.net/ArtList/api/art', newBid)
         .then((res) => console.log('Added'))
         .then(window.location = '/')
     }
